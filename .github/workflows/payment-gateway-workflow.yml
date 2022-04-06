@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "GITHUB_WORKSPACE = ${{ github.workspace }}"
           ls /home/runner/work/CKO/CKO
-          dotnet restore /home/runner/work/CKO/PaymentGateway.sln
+          dotnet restore /home/runner/work/CKO/CKO/PaymentGateway.sln
      
 
 
