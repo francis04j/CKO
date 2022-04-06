@@ -8,12 +8,7 @@ on:
       - 'Tests/**'
       - 'PaymentGateway.sln'      
       - '**/payment-gateway-workflow.yml'
-  pull_request:
-    paths:
-      - 'Src/**'
-      - 'Tests/**'
-      - 'PaymentGateway.sln'
-      - '**/payment-gateway-workflow.yml'
+
   workflow_dispatch:
 jobs:
   build:
@@ -29,7 +24,7 @@ jobs:
           dotnet-version: '5.0.x'
     
       - name: Restore NuGet packages
-        run: dotnet restore
+        run: dotnet restore 'PaymentGateway.sln'
 
       - name: Build
         run: dotnet build -c Release --no-restore
