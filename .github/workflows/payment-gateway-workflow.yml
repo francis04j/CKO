@@ -26,9 +26,7 @@ jobs:
       - name: Restore NuGet packages
         run: |
           echo "GITHUB_WORKSPACE = ${{ github.workspace }}"
-          cd ${{ github.workspace }}
-          cd ..
-          dotnet restore PaymentGateway.sln
+          dotnet restore /home/runner/work/CKO/PaymentGateway.sln
      
 
 
