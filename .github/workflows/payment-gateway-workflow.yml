@@ -24,7 +24,12 @@ jobs:
           dotnet-version: '5.0.x'
     
       - name: Restore NuGet packages
-        run: dotnet restore '${{ github.workspace }}/../PaymentGateway.sln'
+        run: |
+          echo "GITHUB_WORKSPACE = ${{ github.workspace }}"
+          cd ${{ github.workspace }}
+          cd ..
+          dotnet restore PaymentGateway.sln
+     
 
 
       - name: Build
